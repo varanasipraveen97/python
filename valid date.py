@@ -1,0 +1,32 @@
+year = int(input("Enter year: "))
+month = int(input("Enter month: "))
+day = int(input("Enter day: "))
+
+if month < 1 or month > 12:
+    print("Invalid date")
+else:
+    if (year % 400 == 0) or (year % 100 != 0 and year % 4 == 0):
+        leap = True
+    else:
+        leap = False
+
+    if month == 2:
+        if leap:
+            max_days = 29
+        else:
+            max_days = 28
+    elif month in [4, 6, 9, 11]:
+        max_days = 30
+    else:
+        max_days = 31
+
+    if day >= 1 and day <= max_days:
+        print("Valid date")
+    else:
+        print("Invalid date")
+
+
+#Enter year: 2007
+#Enter month: 9
+#Enter day: 3
+#Valid date
